@@ -20,12 +20,18 @@ new_window "jonasb"
 
 # Set active pane.
 #select_pane 0
-tmuxifier-tmux new-window -t "$session:" -d -n "pe1" "ssh pe1"
-tmuxifier-tmux new-window -t "$session:" -d -n "tc01" "ssh tc01"
-tmuxifier-tmux new-window -t "$session:" -d -n "isyspup1" "ssh isyspup1"
-tmuxifier-tmux new-window -t "$session:" -d -n "psyspup1" "ssh psyspup1"
-tmuxifier-tmux new-window -t "$session:" -d -n "foreman" "ssh foreman"
-tmuxifier-tmux new-window -t "$session:" -d -n "psysmon1" "ssh psysmon1"
-tmuxifier-tmux new-window -t "$session:" -d -n "psysbkp1" "ssh psysbkp1"
-tmuxifier-tmux new-window -t "$session:" -d -n "psysbkp2" "ssh psysbkp2"
-tmuxifier-tmux new-window -t "$session:" -d -n "dsyspup1" "ssh dsyspup1"
+hosts='pe1 tc01 isyspup1 psyspup1 foreman psysmon1 psysbkp1 psysbkp2 dsyspup1'
+
+for host in $hosts
+do
+  tmuxifier-tmux new-window -t "${session-$(tmuxifier current-session)}:" -d -n "$host" "ssh $host"
+done
+# tmuxifier-tmux new-window -t "$session:" -d -n "pe1" "ssh pe1"
+# tmuxifier-tmux new-window -t "$session:" -d -n "tc01" "ssh tc01"
+# tmuxifier-tmux new-window -t "$session:" -d -n "isyspup1" "ssh isyspup1"
+# tmuxifier-tmux new-window -t "$session:" -d -n "psyspup1" "ssh psyspup1"
+# tmuxifier-tmux new-window -t "$session:" -d -n "foreman" "ssh foreman"
+# tmuxifier-tmux new-window -t "$session:" -d -n "psysmon1" "ssh psysmon1"
+# tmuxifier-tmux new-window -t "$session:" -d -n "psysbkp1" "ssh psysbkp1"
+# tmuxifier-tmux new-window -t "$session:" -d -n "psysbkp2" "ssh psysbkp2"
+# tmuxifier-tmux new-window -t "$session:" -d -n "dsyspup1" "ssh dsyspup1"

@@ -20,7 +20,7 @@ new_window "jonasb"
 
 # Set active pane.
 #select_pane 0
-hosts='pe1 tc01 isyspup1 psyspup1 foreman psysmon1 psysbkp1 psysbkp2 dsyspup1'
+hosts='pe1 tc01 isyspup1 psyspup1 foreman psysmon1 psysbkp1 psysbkp2 psysbkp3 psysbkp4 dsyspup1'
 
 for host in $hosts
 do
